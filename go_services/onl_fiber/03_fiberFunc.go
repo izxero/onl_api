@@ -45,3 +45,16 @@ func readLog(c *fiber.Ctx) error {
 		return c.JSON(jsonData)
 	}
 }
+
+func nestedQuery(c *fiber.Ctx) error {
+	result, err := onl.ReadFileJson("./public/html_template/html_variable.json")
+	if err != nil {
+		return c.JSON(onl.ErrorReturn(err, c))
+	}
+	result2, err := onl.ReadFileJson("./public/html_template/html_variable.json")
+	if err != nil {
+		return c.JSON(onl.ErrorReturn(err, c))
+	}
+	result["data"] = result2
+	return c.JSON(result)
+}

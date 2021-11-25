@@ -35,7 +35,7 @@ var center = {
 }
 
 function login(){
-    webix.ajax("/api/11/query",function(text){
+    webix.ajax("/api/111/query",function(text){
         console.log(text);
     });
 }

@@ -1,0 +1,57 @@
+package onl_fiber
+
+import (
+	"fmt"
+
+	"github.com/gofiber/fiber/v2"
+	"github.com/savirusing/onl_query/go_services/onl_db"
+	onl "github.com/savirusing/onl_query/go_services/onl_func"
+)
+
+func queryNested1(c *fiber.Ctx) error {
+	sql := "select id ,vchr_no,db,cr from gl_vchr v where id like '11%' order by id"
+	res, err := onl_db.QuerySql(sql)
+	if err != nil {
+		return c.JSON(onl.ErrorReturn(err, c))
+	}
+	id := ""
+	gl_name := ""
+	for _, mst_value := range res {
+		current_id := fmt.Sprintf("%v", mst_value["ID"])
+		if current_id != id {
+			// fmt.Printf("new id found : current id %v : previous id : %v\n", current_id, id)
+			sql = fmt.Sprintf("select name_thai from gl_mst where id = '%v'", current_id)
+			// println(sql)
+			gl_name_res, err := onl_db.QuerySql(sql)
+			if err != nil {
+				return c.JSON(onl.ErrorReturn(err, c))
+			}
+			gl_name = fmt.Sprintf("%v", gl_name_res[0]["NAME_THAI"])
+			mst_value["GL_NAME"] = gl_name
+		} else {
+			// fmt.Printf("current id %v : previous id : %v\n", current_id, id)
+			mst_value["GL_NAME"] = gl_name
+		}
+		// fmt.Printf("\tID = %v & GL_NAME = %v\n", current_id, mst_value["GL_NAME"])
+		id = fmt.Sprintf("%v", mst_value["ID"])
+	}
+	return c.JSON(res)
+}
+
+func queryNested2(c *fiber.Ctx) error {
+	sql := "select id, Name_thai from gl_mst where rownum < 10"
+	res, err := onl_db.QuerySql(sql)
+	if err != nil {
+		return c.JSON(onl.ErrorReturn(err, c))
+	}
+	for _, mst_value := range res {
+		current_id := fmt.Sprintf("%v", mst_value["ID"])
+		sql = fmt.Sprintf("select id,vchr_no, db, cr from gl_vchr where id = '%v'", current_id)
+		gl_name_res, err := onl_db.QuerySql(sql)
+		if err != nil {
+			return c.JSON(onl.ErrorReturn(err, c))
+		}
+		mst_value["data"] = gl_name_res
+	}
+	return c.JSON(res)
+}

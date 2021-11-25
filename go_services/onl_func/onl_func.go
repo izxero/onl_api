@@ -36,3 +36,14 @@ func JsonForTemplate(data map[string]interface{}) map[string]interface{} {
 	data["api_key"] = strconv.Itoa(int(time.Now().Month()) + 100)
 	return data
 }
+
+// func ReadViper(name string)(string){
+// 	viper.SetConfigName("config")
+// 	viper.SetConfigType("yaml")
+// 	viper.AddConfigPath(".")
+// 	err := viper.ReadInConfig()
+// 	if err := nil {
+// 		panic
+// 	}
+// 	return ""
+// }
