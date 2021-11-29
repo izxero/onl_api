@@ -2,8 +2,50 @@ package onl_db
 
 import (
 	"errors"
+	"fmt"
+	"net/url"
 	"strings"
+
+	"github.com/gofiber/fiber/v2"
 )
+
+func GetSqlOrSqlNo(c *fiber.Ctx) (string, error) {
+	sql_no := c.Params("sql_no")
+	sql := c.Query("sql")
+	if sql == "" && sql_no == "" {
+		return "", errors.New("no sql found")
+	}
+	if sql != "" {
+		sql = ReplaceWithParams(sql, c)
+		return sql, nil
+	}
+	sql, err := SqlFromSQL2Excel(sql_no)
+	if err != nil {
+		return "", err
+	}
+	return sql, nil
+}
+
+func SqlFromSQL2Excel(sql_no string) (string, error) {
+	var sql_text string
+	rows := DB.QueryRow("select sql_text from sql2excel where doc_no = :1", sql_no)
+	err := rows.Scan(&sql_text)
+	if err != nil {
+		return "", err
+	}
+	return sql_text, nil
+}
+
+func ReplaceWithParams(sql string, c *fiber.Ctx) string {
+	params, _ := url.ParseQuery(fmt.Sprintf("%v", c.Request().URI().QueryArgs()))
+	for k, v := range params {
+		for _, e := range v {
+			key := "{" + k + "}"
+			sql = strings.Replace(sql, key, e, -1)
+		}
+	}
+	return sql
+}
 
 func SqlInjection(sql string) error {
 	injection := []string{

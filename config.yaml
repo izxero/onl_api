@@ -1,0 +1,9 @@
+app:
+  port: 80
+  name: "ONLFINTECH GO SERVICES API"
+
+db:
+  driver: "godror"
+  user: "kingkong"
+  pass: "k"
+  connectString: "192.168.101.240/APP"

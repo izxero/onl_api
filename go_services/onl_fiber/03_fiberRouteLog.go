@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	onl "github.com/savirusing/onl_query/go_services/onl_func"
+	"github.com/savirusing/onl_query/go_services/onl_func"
 )
 
 func readLog(c *fiber.Ctx) error {
@@ -19,11 +19,11 @@ func readLog(c *fiber.Ctx) error {
 		log_file_name = "./log/" + c.Params("date") + ".txt"
 	}
 	if data, err := os.ReadFile(log_file_name); err != nil {
-		return c.JSON(onl.ErrorReturn(err, c))
+		return c.JSON(onl_func.ErrorReturn(err, c))
 	} else {
 		if len(data) < 3 {
 			err := errors.New("no data found")
-			return c.JSON(onl.ErrorReturn(err, c))
+			return c.JSON(onl_func.ErrorReturn(err, c))
 		}
 		no_comma := data[:len(data)-2]
 		log_data := fmt.Sprintf("[%v]", string(no_comma))
@@ -40,21 +40,8 @@ func readLog(c *fiber.Ctx) error {
 		}
 		jsonData := []LogData{}
 		if err := json.Unmarshal([]byte(log_data), &jsonData); err != nil {
-			return c.JSON(onl.ErrorReturn(err, c))
+			return c.JSON(onl_func.ErrorReturn(err, c))
 		}
 		return c.JSON(jsonData)
 	}
-}
-
-func nestedQuery(c *fiber.Ctx) error {
-	result, err := onl.ReadFileJson("./public/html_template/html_variable.json")
-	if err != nil {
-		return c.JSON(onl.ErrorReturn(err, c))
-	}
-	result2, err := onl.ReadFileJson("./public/html_template/html_variable.json")
-	if err != nil {
-		return c.JSON(onl.ErrorReturn(err, c))
-	}
-	result["data"] = result2
-	return c.JSON(result)
 }

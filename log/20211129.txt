@@ -1,0 +1,27 @@
+{
+	"timestamp":"29-Nov-2021 T10:51:40",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/test/query1",
+	"queryParams":"",
+	"latency":"1.7995147s"
+},
+{
+	"timestamp":"29-Nov-2021 T11:21:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/111/sqlq/ax",
+	"queryParams":"sql=select+%2A+from+city",
+	"latency":"406.9785ms"
+},
+{
+	"timestamp":"29-Nov-2021 T11:21:39",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/111/sqlq/ax",
+	"queryParams":"sql=select+%2A+from+city+where+rownum+%3C+%7Brow%7D&row=10",
+	"latency":"24.8163ms"
+},
