@@ -25,6 +25,22 @@ func postSqlq(c *fiber.Ctx) error {
 	return c.JSON(res)
 }
 
+// Query Columns from sql with post SQL (no sql_no and replace func)
+func postSqlh(c *fiber.Ctx) error {
+	type POST struct {
+		SQL string `json:"SQL"`
+	}
+	post_values := new(POST)
+	if err := c.BodyParser(post_values); err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	columns, err := onl_db.QuerySqlColumns(post_values.SQL, true)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.JSON(columns)
+}
+
 // Query Nested from POST SQL11 & SQL2 with relation (no sql_no and replace func)
 func postSqln(c *fiber.Ctx) error {
 	type POST struct {

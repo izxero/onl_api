@@ -52,3 +52,22 @@ func QuerySql(sql string, injection bool) ([]map[string]interface{}, error) {
 	}
 	return allMaps, nil
 }
+
+func QuerySqlColumns(sql string, injection bool) ([]string, error) {
+	DB := ConnectDB()
+	defer DB.Close()
+	if injection {
+		if err := SqlInjection(sql); err != nil {
+			return nil, err
+		}
+	}
+	rows, err := DB.Query(sql)
+	if err != nil {
+		return nil, err
+	}
+	columns, err := rows.Columns()
+	if err != nil {
+		return nil, err
+	}
+	return columns, nil
+}

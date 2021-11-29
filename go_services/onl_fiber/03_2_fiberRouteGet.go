@@ -14,7 +14,6 @@ func sqlq(c *fiber.Ctx) error {
 	sql_no := c.Params("sql_no")
 	sql := c.Query("sql")
 	sql, err := onl_db.GetSqlOrSqlNo(sql_no, sql, c)
-	println(sql)
 	if err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
@@ -23,6 +22,21 @@ func sqlq(c *fiber.Ctx) error {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
 	return c.JSON(result)
+}
+
+// Query Columns from sql_no (or sql)
+func sqlh(c *fiber.Ctx) error {
+	sql_no := c.Params("sql_no")
+	sql := c.Query("sql")
+	sql, err := onl_db.GetSqlOrSqlNo(sql_no, sql, c)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	columns, err := onl_db.QuerySqlColumns(sql, true)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.JSON(columns)
 }
 
 // Query Nested from sql_no1 & sql_no2 with relation or (sql1 & sql2)

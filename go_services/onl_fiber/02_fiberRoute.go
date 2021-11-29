@@ -20,10 +20,12 @@ func fiberRoute(app *fiber.App) {
 	api := app.Group("/api/:key", checkKey) // Check key for all api requerst via this group
 	// Create Group as ==> host:port/api/key/get/...
 	apiGet := api.Group("/get")
-	apiGet.Get("/sqlq/:sql_no", sqlq) // Query from sql_no (or sql) ==> host:/port/api/key/get/sqlq/:sql_no
+	apiGet.Get("/sqlh/:sql_no", sqlh) // Query Columns from sql_no (or sql) ==> host:/port/api/key/get/sqlh/:sql_no?sql=...
+	apiGet.Get("/sqlq/:sql_no", sqlq) // Query from sql_no (or sql) ==> host:/port/api/key/get/sqlq/:sql_no/:sql_no?sql=...
 	apiGet.Get("/sqln", sqln)         // Query nested parent: sql1 with child: sql2 connect with parameter ==> host:/port/api/key/get/sqln?(sql_no1||sql1)=...&(sql_no2||sql2)=...&relation=parent_key=child_key
 	// Create Group as ==> host:port/api/key/post/...
 	apiPost := api.Group("/post")
+	apiPost.Post("/sqlh", postSqlh) // Query Columns from POST DATA SQL ==> host:port/api/key/post/sqlh
 	apiPost.Post("/sqlq", postSqlq) // Query from POST DATA SQL ==> host:port/api/key/post/sqlq
 	apiPost.Post("/sqln", postSqln) // Query nested from POST DATA SQL1 & SQL2 & RELATION ==> host:port/api/key/post/sqln
 
