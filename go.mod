@@ -1,4 +1,4 @@
-module github.com/savirusing/onl_query
+module github.com/savirusing/onl_api
 
 go 1.17
 

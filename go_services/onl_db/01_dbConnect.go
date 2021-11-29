@@ -5,7 +5,7 @@ import (
 
 	_ "github.com/godror/godror"
 	"github.com/jmoiron/sqlx"
-	"github.com/savirusing/onl_query/go_services/onl_func"
+	"github.com/savirusing/onl_api/go_services/onl_func"
 )
 
 // var DB *sqlx.DB

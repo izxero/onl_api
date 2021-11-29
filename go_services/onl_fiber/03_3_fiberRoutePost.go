@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/savirusing/onl_query/go_services/onl_db"
-	"github.com/savirusing/onl_query/go_services/onl_func"
+	"github.com/savirusing/onl_api/go_services/onl_db"
+	"github.com/savirusing/onl_api/go_services/onl_func"
 )
 
 // Query from sql with post SQL (no sql_no and replace func)

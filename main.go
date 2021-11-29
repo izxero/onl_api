@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/savirusing/onl_query/go_services/onl_fiber"
-	"github.com/savirusing/onl_query/go_services/onl_func"
+	"github.com/savirusing/onl_api/go_services/onl_fiber"
+	"github.com/savirusing/onl_api/go_services/onl_func"
 )
 
 func main() {

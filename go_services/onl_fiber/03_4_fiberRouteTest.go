@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/savirusing/onl_query/go_services/onl_db"
-	"github.com/savirusing/onl_query/go_services/onl_func"
+	"github.com/savirusing/onl_api/go_services/onl_db"
+	"github.com/savirusing/onl_api/go_services/onl_func"
 )
 
 func queryNested1(c *fiber.Ctx) error {

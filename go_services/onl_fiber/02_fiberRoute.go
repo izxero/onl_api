@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/savirusing/onl_query/go_services/onl_func"
+	"github.com/savirusing/onl_api/go_services/onl_func"
 )
 
 func fiberRoute(app *fiber.App) {
