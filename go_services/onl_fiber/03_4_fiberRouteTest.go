@@ -55,3 +55,12 @@ func queryNested2(c *fiber.Ctx) error {
 	}
 	return c.JSON(res)
 }
+
+func readPost(c *fiber.Ctx) error {
+	// var postData []map[string]interface{}
+	data := c.Body()
+	for key, values := range data {
+		fmt.Println(key, values)
+	}
+	return nil
+}

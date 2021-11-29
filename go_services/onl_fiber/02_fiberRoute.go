@@ -33,6 +33,7 @@ func fiberRoute(app *fiber.App) {
 	apiTest := app.Group("/test")
 	apiTest.Get("/query1", queryNested1) //host:/port/test/query1
 	apiTest.Get("/query2", queryNested2) //host:/port/test/query2
+	apiTest.Post("/readPost",readPost)
 
 	// Main Path no Group create ==> host:port/...
 	appRender(app, "/", "html/main/index", "html_template/webix_header") //render htnl/main/index
