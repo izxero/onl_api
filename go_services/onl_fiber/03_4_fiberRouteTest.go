@@ -5,14 +5,14 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/savirusing/onl_query/go_services/onl_db"
-	onl "github.com/savirusing/onl_query/go_services/onl_func"
+	"github.com/savirusing/onl_query/go_services/onl_func"
 )
 
 func queryNested1(c *fiber.Ctx) error {
 	sql := "select id ,vchr_no,db,cr from gl_vchr v where id like '11%' order by id"
-	res, err := onl_db.QuerySql(sql)
+	res, err := onl_db.QuerySql(sql, true)
 	if err != nil {
-		return c.JSON(onl.ErrorReturn(err, c))
+		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
 	id := ""
 	gl_name := ""
@@ -22,9 +22,9 @@ func queryNested1(c *fiber.Ctx) error {
 			// fmt.Printf("new id found : current id %v : previous id : %v\n", current_id, id)
 			sql = fmt.Sprintf("select name_thai from gl_mst where id = '%v'", current_id)
 			// println(sql)
-			gl_name_res, err := onl_db.QuerySql(sql)
+			gl_name_res, err := onl_db.QuerySql(sql, true)
 			if err != nil {
-				return c.JSON(onl.ErrorReturn(err, c))
+				return c.JSON(onl_func.ErrorReturn(err, c))
 			}
 			gl_name = fmt.Sprintf("%v", gl_name_res[0]["NAME_THAI"])
 			mst_value["GL_NAME"] = gl_name
@@ -40,16 +40,16 @@ func queryNested1(c *fiber.Ctx) error {
 
 func queryNested2(c *fiber.Ctx) error {
 	sql := "select id, Name_thai from gl_mst where rownum < 10"
-	res, err := onl_db.QuerySql(sql)
+	res, err := onl_db.QuerySql(sql, true)
 	if err != nil {
-		return c.JSON(onl.ErrorReturn(err, c))
+		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
 	for _, mst_value := range res {
 		current_id := fmt.Sprintf("%v", mst_value["ID"])
 		sql = fmt.Sprintf("select id,vchr_no, db, cr from gl_vchr where id = '%v'", current_id)
-		gl_name_res, err := onl_db.QuerySql(sql)
+		gl_name_res, err := onl_db.QuerySql(sql, true)
 		if err != nil {
-			return c.JSON(onl.ErrorReturn(err, c))
+			return c.JSON(onl_func.ErrorReturn(err, c))
 		}
 		mst_value["data"] = gl_name_res
 	}

@@ -6,4 +6,4 @@ db:
   driver: "godror"
   user: "kingkong"
   pass: "k"
-  connectString: "192.168.101.240/APP"
+  connectString: "192.168.106.5/APP"

@@ -8,9 +8,9 @@ import (
 	"github.com/savirusing/onl_query/go_services/onl_func"
 )
 
-var DB *sqlx.DB
+// var DB *sqlx.DB
 
-func ConnectDB() {
+func ConnectDB() *sqlx.DB {
 	// db, err := sqlx.Open("godror", `user="kingkong" password="k" connectString="192.168.106.5/APP"`)
 	// db, err := sqlx.Open("godror", `user="kingkong" password="k" connectString="192.168.101.240/APP"`)
 	// db, err := sqlx.Open("godror", "kingkong/k@192.168.101.240/APP")
@@ -23,5 +23,5 @@ func ConnectDB() {
 	if err != nil {
 		panic(err)
 	}
-	DB = db
+	return db
 }

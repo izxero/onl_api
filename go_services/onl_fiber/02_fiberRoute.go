@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	onl "github.com/savirusing/onl_query/go_services/onl_func"
+	"github.com/savirusing/onl_query/go_services/onl_func"
 )
 
 func fiberRoute(app *fiber.App) {
@@ -18,8 +18,14 @@ func fiberRoute(app *fiber.App) {
 
 	// Create Group as ==> host:port/api/key/...
 	api := app.Group("/api/:key", checkKey) // Check key for all api requerst via this group
-	api.Get("/sqlq/:sql_no", sqlq)          // Query from sql_no (or sql) ==> host:/port/api/key/query
-	api.Get("/nestedQuery", nestedQuery)    // Query from SQL ==> host:port/api/key/query
+	// Create Group as ==> host:port/api/key/get/...
+	apiGet := api.Group("/get")
+	apiGet.Get("/sqlq/:sql_no", sqlq) // Query from sql_no (or sql) ==> host:/port/api/key/get/sqlq/:sql_no
+	apiGet.Get("/sqln", sqln)         // Query nested parent: sql1 with child: sql2 connect with parameter ==> host:/port/api/key/get/sqln?(sql_no1||sql1)=...&(sql_no2||sql2)=...&relation=parent_key=child_key
+	// Create Group as ==> host:port/api/key/post/...
+	apiPost := api.Group("/post")
+	apiPost.Post("/sqlq", postSqlq) // Query from POST DATA SQL ==> host:port/api/key/post/sqlq
+	apiPost.Post("/sqln", postSqln) // Query nested from POST DATA SQL1 & SQL2 & RELATION ==> host:port/api/key/post/sqln
 
 	// Create Group as ==> host:port/test/...
 	apiTest := app.Group("/test")
@@ -35,14 +41,14 @@ func appRender(app fiber.Router, route string, index_path string, template_path 
 	index_with_ext := index_without_ext + ".html"
 	template_path_without_ext := strings.Replace(template_path, ".html", "", -1)
 	app.Get(route, func(c *fiber.Ctx) error {
-		result, err := onl.ReadFileJson("./public/html_template/html_variable.json")
+		result, err := onl_func.ReadFileJson("./public/html_template/html_variable.json")
 		if err != nil {
-			return c.JSON(onl.ErrorReturn(err, c))
+			return c.JSON(onl_func.ErrorReturn(err, c))
 		}
-		jsonData := onl.JsonForTemplate(result)
+		jsonData := onl_func.JsonForTemplate(result)
 		err = c.Render(index_without_ext, jsonData, template_path_without_ext)
 		if err != nil {
-			return c.JSON(onl.ErrorReturn(err, c))
+			return c.JSON(onl_func.ErrorReturn(err, c))
 		}
 		return nil
 	})
@@ -59,5 +65,5 @@ func checkKey(c *fiber.Ctx) error {
 		return c.Next()
 	}
 	err := errors.New("invalid key for api")
-	return c.JSON(onl.ErrorReturn(err, c))
+	return c.JSON(onl_func.ErrorReturn(err, c))
 }
