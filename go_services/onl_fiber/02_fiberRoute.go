@@ -25,15 +25,16 @@ func fiberRoute(app *fiber.App) {
 	apiGet.Get("/sqln", sqln)         // Query nested parent: sql1 with child: sql2 connect with parameter ==> host:/port/api/key/get/sqln?(sql_no1||sql1)=...&(sql_no2||sql2)=...&relation=parent_key=child_key
 	// Create Group as ==> host:port/api/key/post/...
 	apiPost := api.Group("/post")
-	apiPost.Post("/sqlh", postSqlh) // Query Columns from POST DATA SQL ==> host:port/api/key/post/sqlh
-	apiPost.Post("/sqlq", postSqlq) // Query from POST DATA SQL ==> host:port/api/key/post/sqlq
-	apiPost.Post("/sqln", postSqln) // Query nested from POST DATA SQL1 & SQL2 & RELATION ==> host:port/api/key/post/sqln
+	apiPost.Post("/sqlh", postSqlh)         // Query Columns from POST DATA SQL ==> host:port/api/key/post/sqlh
+	apiPost.Post("/sqlq", postSqlq)         // Query from POST DATA SQL ==> host:port/api/key/post/sqlq
+	apiPost.Post("/sqln", postSqln)         // Query nested from POST DATA SQL1 & SQL2 & RELATION ==> host:port/api/key/post/sqln
+	apiPost.Post("/sqlnjson", postSqlnJson) // Query nested from POST DATA SQL1 & SQL2 & RELATION ==> host:port/api/key/post/sqlnjson
 
 	// Create Group as ==> host:port/test/...
 	apiTest := app.Group("/test")
 	apiTest.Get("/query1", queryNested1) //host:/port/test/query1
 	apiTest.Get("/query2", queryNested2) //host:/port/test/query2
-	apiTest.Post("/readPost",readPost)
+	apiTest.Post("/readPost", readPost)
 
 	// Main Path no Group create ==> host:port/...
 	appRender(app, "/", "html/main/index", "html_template/webix_header") //render htnl/main/index

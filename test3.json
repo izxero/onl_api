@@ -1,0 +1,13 @@
+{
+  "sql_no": "REP6410-0022",
+  "data":{
+    "data_name_1":{
+      "sql_no":"REP6410-0023",
+      "rel":"id=id"
+    },
+    "data_name_2":{
+      "sql_no":"REP6410-0025",
+      "rel":"id=id"
+    }
+  }
+}

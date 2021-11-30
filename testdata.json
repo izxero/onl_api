@@ -1,0 +1,28 @@
+[
+    {
+        "master_key_1_1":"master_val_1_1",
+        "master_key_1_2":"master_val_1_2",
+        "master_key_1_3":"master_val_1_3",
+        "master_key_1_4":"master_val_1_4",
+        "master_key_1_5":null
+    },
+    {
+        "master_key_2_1":"master_val_2_1",
+        "master_key_2_2":"master_val_2_2",
+        "master_key_2_3":"master_val_2_3",
+        "master_key_2_4":"master_val_2_4",
+        "master_key_2_5":null
+    },
+    {
+        "master_key_3_1":"master_val_3_1",
+        "master_key_3_2":"master_val_3_2",
+        "master_key_3_3":"master_val_3_3",
+        "master_key_3_4":"master_val_3_4",
+        "master_key_3_5":{
+            "detail_key_1":"detail_val_1",
+            "detail_key_2":"detail_val_2",
+            "detail_key_3":"detail_val_3",
+            "detail_key_4":"detail_val_4"
+        }
+    }
+]
