@@ -1,6 +1,7 @@
 package onl_fiber
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
@@ -62,4 +63,17 @@ func readPost(c *fiber.Ctx) error {
 	chttp := c.Context().PostBody()
 	fmt.Printf("%v\n", string(chttp))
 	return c.JSON(nil)
+}
+
+func sqlJson(c *fiber.Ctx) error {
+	sqlJson := c.Query("sqlJson")
+	var data map[string]interface{}
+	if err := json.Unmarshal([]byte(sqlJson), &data); err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	res, err := interfaceToMap(data, nil,"")
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.JSON(res)
 }

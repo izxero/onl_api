@@ -1,6 +1,7 @@
 package onl_fiber
 
 import (
+	"encoding/json"
 	"fmt"
 	"strings"
 
@@ -39,6 +40,22 @@ func sqlh(c *fiber.Ctx) error {
 	return c.JSON(columns)
 }
 
+// Query Columns from sql_no (or sql)
+func sqlht(c *fiber.Ctx) error {
+	sql_no := c.Params("sql_no")
+	sql := c.Query("sql")
+	sql, err := onl_db.GetSqlOrSqlNo(sql_no, sql, c)
+	if err != nil {
+		println(err.Error())
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	columnTypes, err := onl_db.QuerySqlColumnTypes(sql, true)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.JSON(columnTypes)
+}
+
 // Query Nested from sql_no1 & sql_no2 with relation or (sql1 & sql2)
 func sqln(c *fiber.Ctx) error {
 	sql_no1 := c.Query("sql_no1")
@@ -75,4 +92,17 @@ func sqln(c *fiber.Ctx) error {
 		data_cds1["DATA_CDS2"] = res_cds2
 	}
 	return c.JSON(res_cds1)
+}
+
+func sqlnJson(c *fiber.Ctx) error {
+	sqlJson := c.Query("sqlJson")
+	var data map[string]interface{}
+	if err := json.Unmarshal([]byte(sqlJson), &data); err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	res, err := interfaceMap(data)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.JSON(res)
 }

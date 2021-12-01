@@ -1,0 +1,756 @@
+{
+	"timestamp":"01-Dec-2021 T11:16:02",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/111/post/sqlnjson",
+	"queryParams":"",
+	"latency":"1.1108ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:16:09",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"01-Dec-2021 T11:17:08",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"326.1µs"
+},
+{
+	"timestamp":"01-Dec-2021 T11:18:11",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"999.3µs"
+},
+{
+	"timestamp":"01-Dec-2021 T11:20:39",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"1.1613ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:22:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"1.9953ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:30:43",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"1.0806ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:34:15",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"1.6474507s"
+},
+{
+	"timestamp":"01-Dec-2021 T11:34:53",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"272.5174ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:35:48",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"254.0147ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:36:31",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"243.8433ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:39:55",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"300.1683ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:45:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"337.62ms"
+},
+{
+	"timestamp":"01-Dec-2021 T11:57:54",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"258.1632ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:15:45",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/111/get/sqlh/ss",
+	"queryParams":"sql=select+%2A+from+city",
+	"latency":"1.1032ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:15:51",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlh/ss",
+	"queryParams":"sql=select+%2A+from+city",
+	"latency":"268.0921ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:15:54",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/ss",
+	"queryParams":"sql=select+%2A+from+city",
+	"latency":"68.6333ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:16:49",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/ss",
+	"queryParams":"sql=select+%2A+from+city",
+	"latency":"272.5221ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:19:49",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/ss",
+	"queryParams":"sql=select+%2A+from+city",
+	"latency":"284.5933ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:22:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/ss",
+	"queryParams":"sql=select+%2A+from+city",
+	"latency":"265.1506ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:29:20",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/ss",
+	"queryParams":"sql=select+%2A+from+city",
+	"latency":"339.1803ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:30:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/REP6410-0026",
+	"queryParams":"",
+	"latency":"1.1175837s"
+},
+{
+	"timestamp":"01-Dec-2021 T12:30:28",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/REP6410-0019",
+	"queryParams":"",
+	"latency":"33.2732ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:31:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/REP6410-0019",
+	"queryParams":"",
+	"latency":"247.6911ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:32:37",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/REP6410-0019",
+	"queryParams":"",
+	"latency":"263.2871ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:33:18",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/REP6410-0022",
+	"queryParams":"",
+	"latency":"16.9898ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:33:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/REP6401-0003",
+	"queryParams":"",
+	"latency":"141.6601ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:42:59",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/REP6401-0003",
+	"queryParams":"",
+	"latency":"325.9023ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:43:48",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/REP6401-0003",
+	"queryParams":"",
+	"latency":"1.9735736s"
+},
+{
+	"timestamp":"01-Dec-2021 T12:45:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/REP6401-0003",
+	"queryParams":"",
+	"latency":"341.3354ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:49:00",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"11.9931ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:49:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"70.3241ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:50:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/REP6401-0003",
+	"queryParams":"",
+	"latency":"335.1593ms"
+},
+{
+	"timestamp":"01-Dec-2021 T12:58:11",
+	"ip":"192.168.101.118",
+	"status":"404",
+	"method":"GET",
+	"path":"/favicon.ico",
+	"queryParams":"",
+	"latency":"940.7µs"
+},
+{
+	"timestamp":"01-Dec-2021 T12:59:02",
+	"ip":"192.168.101.118",
+	"status":"404",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/",
+	"queryParams":"sql=select+%2A+from+gl_vchr+where+rownum%3C20",
+	"latency":"0s"
+},
+{
+	"timestamp":"01-Dec-2021 T13:00:11",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlht/REP6410-0012",
+	"queryParams":"sql=select+%2A+from+gl_vchr+where+rownum%3C20",
+	"latency":"81.1256ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:02:45",
+	"ip":"192.168.101.118",
+	"status":"404",
+	"method":"GET",
+	"path":"/favicon.ico",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"01-Dec-2021 T13:03:36",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/REP6410-0012",
+	"queryParams":"sql=select+%2A+from+gl_vchr+where+rownum%3C20",
+	"latency":"297.2347ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:10:26",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/REP6410-0012",
+	"queryParams":"DateFrom=01%2F10%2F2021&DateTo=30%2F11%2F2021",
+	"latency":"45.0327ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:11:09",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/REP6410-0012",
+	"queryParams":"DateFrom=01%2F10%2F2021&DateTo=30%2F11%2F2021",
+	"latency":"40.0852ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:11:12",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/REP6410-0012",
+	"queryParams":"DateFrom=01%2F10%2F2021&DateTo=30%2F11%2F2021",
+	"latency":"44.0903ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:14:48",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/REP6410-0012",
+	"queryParams":"DateFrom=01%2F10%2F2021&DateTo=30%2F11%2F2021",
+	"latency":"41.3768ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:18:31",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"7.7026ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:18:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"9.9943ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:32:22",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"298.8299ms"
+},
+{
+	"timestamp":"01-Dec-2021 T13:59:48",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"286.5784ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:00:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"323.8894ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:01:29",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"1.1129ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:02:03",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"328.1254ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:04:51",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"296.2984ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:05:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"296.5595ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:06:19",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"315.0264ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:07:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"272.8379ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:08:21",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"692.3393ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:09:00",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"652.8045ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:09:18",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"580.2234ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:10:10",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"534.85ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:10:49",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"895.1558ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:11:40",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"760.8503ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:13:29",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"805.5814ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:15:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"11.0752457s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:20:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/post/sqlnjson",
+	"queryParams":"",
+	"latency":"13.9781313s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:26:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B%0A++%22sql_no%22%3A+%22REP6410-0022%22%2C%0A++%22data%22%3A%7B%0A++++%22set_menu_activity%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0023%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%2C%0A++++%22set_menu%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0025%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%0A++%7D%0A%7D%0A",
+	"latency":"11.9389445s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:26:55",
+	"ip":"192.168.101.86",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B%0A++%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0023%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%2C%0A++++%22set_menu%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0025%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%0A++%7D%0A%7D%0A",
+	"latency":"11.36259s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:27:20",
+	"ip":"192.168.101.86",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B++%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B++++++%22sql_no%22%3A%22REP6410-0023%22%2C++++++%22rel%22%3A%22menu_id%3Dmenu_id%22++++%7D%2C++++%22set_menu%22%3A%7B++++++%22sql_no%22%3A%22REP6410-0025%22%2C++++++%22rel%22%3A%22menu_id%3Dmenu_id%22++++%7D++%7D%7D",
+	"latency":"12.8393659s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:29:21",
+	"ip":"192.168.101.118",
+	"status":"405",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B++%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B++++++%22sql_no%22%3A%22REP6410-0023%22%2C++++++%22rel%22%3A%22menu_id%3Dmenu_id%22++++%7D%2C++++%22set_menu%22%3A%7B++++++%22sql_no%22%3A%22REP6410-0025%22%2C++++++%22rel%22%3A%22menu_id%3Dmenu_id%22++++%7D++%7D%7D",
+	"latency":"0s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:29:38",
+	"ip":"192.168.101.118",
+	"status":"405",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B+%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B+%22sql_no%22%3A%22REP6410-0023%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D%2C+%22set_menu%22%3A%7B+%22sql_no%22%3A%22REP6410-0025%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D+%7D%7D",
+	"latency":"0s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:30:17",
+	"ip":"192.168.101.86",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B++%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B++++++%22sql_no%22%3A%22REP6410-0023%22%2C++++++%22rel%22%3A%22menu_id%3Dmenu_id%22++++%7D%2C++++%22set_menu%22%3A%7B++++++%22sql_no%22%3A%22REP6410-0025%22%2C++++++%22rel%22%3A%22menu_id%3Dmenu_id%22++++%7D++%7D%7D",
+	"latency":"11.5027761s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:30:27",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B+%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B+%22sql_no%22%3A%22REP6410-0023%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D%2C+%22set_menu%22%3A%7B+%22sql_no%22%3A%22REP6410-0025%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D+%7D%7D",
+	"latency":"20.764232s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:31:21",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B+%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B+%22sql_no%22%3A%22REP6410-0023%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D%2C+%22set_menu%22%3A%7B+%22sql_no%22%3A%22REP6410-0025%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D+%7D%7D",
+	"latency":"9.6511973s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:31:34",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B+%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B+%22sql_no%22%3A%22REP6410-0023%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D%2C+%22set_menu%22%3A%7B+%22sql_no%22%3A%22REP6410-0025%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D+%7D%7D",
+	"latency":"9.8795911s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:34:51",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B+%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B+%22sql_no%22%3A%22REP6410-0023%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D%2C+%22set_menu%22%3A%7B+%22sql_no%22%3A%22REP6410-0025%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D+%7D%7D",
+	"latency":"11.0728906s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:37:03",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B+%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B+%22sql_no%22%3A%22REP6410-0023%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D%2C+%22set_menu%22%3A%7B+%22sql_no%22%3A%22REP6410-0025%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D+%7D%7D",
+	"latency":"9.743112s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:40:21",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B+%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B+%22sql_no%22%3A%22REP6410-0023%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D%2C+%22set_menu%22%3A%7B+%22sql_no%22%3A%22REP6410-0025%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D+%7D%7D",
+	"latency":"9.6580024s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:40:35",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B+%22sql_no%22%3A+%22REP6410-0022%22%2C+%22data%22%3A%7B%22set_menu_activity%22%3A%7B+%22sql_no%22%3A%22REP6410-0023%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D%2C+%22set_menu%22%3A%7B+%22sql_no%22%3A%22REP6410-0025%22%2C+%22rel%22%3A%22menu_id%3Dmenu_id%22+%7D+%7D%7D",
+	"latency":"9.7327235s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:41:30",
+	"ip":"192.168.101.86",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B%0A++%22sql_no%22%3A+%22REP6410-0022%22%2C%0A++%22data%22%3A%7B%0A++++%22set_menu_activity%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0023%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%0A++%7D%0A%7D",
+	"latency":"4.8836977s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:42:18",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B%0A++%22sql_no%22%3A+%22REP6410-0022%22%2C%0A++%22data%22%3A%7B%0A++++%22set_menu_activity%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0023%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%0A++%7D%0A%7D",
+	"latency":"4.3134234s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:42:31",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B",
+	"latency":"1.0292ms"
+},
+{
+	"timestamp":"01-Dec-2021 T14:42:31",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B",
+	"latency":"0s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:43:59",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B%22sql_no%22%3A+%22REP6410-0022%22%2C%22data%22%3A%7B%22set_menu_activity%22%3A%7B%22sql_no%22%3A%22REP6410-0023%22%2C%22rel%22%3A%22menu_id%3Dmenu_id%22%7D%7D%7D",
+	"latency":"4.3733729s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:44:04",
+	"ip":"192.168.101.118",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlnjson",
+	"queryParams":"sqlJson=%7B%22sql_no%22%3A+%22REP6410-0022%22%2C%22data%22%3A%7B%22set_menu_activity%22%3A%7B%22sql_no%22%3A%22REP6410-0023%22%2C%22rel%22%3A%22menu_id%3Dmenu_id%22%7D%7D%7D",
+	"latency":"4.4165496s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:59:02",
+	"ip":"127.0.0.1",
+	"status":"405",
+	"method":"POST",
+	"path":"/test/sqlJson",
+	"queryParams":"sqlJson=%7B%0A++%22sql_no%22%3A+%22REP6410-0022%22%2C%0A++%22data%22%3A%7B%0A++++%22set_menu_activity%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0023%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%2C%0A++++%22set_menu%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0025%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%0A++%7D%0A%7D%0A",
+	"latency":"0s"
+},
+{
+	"timestamp":"01-Dec-2021 T14:59:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/test/sqlJson",
+	"queryParams":"sqlJson=%7B%0A++%22sql_no%22%3A+%22REP6410-0022%22%2C%0A++%22data%22%3A%7B%0A++++%22set_menu_activity%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0023%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%2C%0A++++%22set_menu%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0025%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%0A++%7D%0A%7D%0A",
+	"latency":"2.9938ms"
+},
+{
+	"timestamp":"01-Dec-2021 T15:01:11",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/test/sqlJson",
+	"queryParams":"sqlJson=%7B%0A++%22sql_no%22%3A+%22REP6410-0022%22%2C%0A++%22data%22%3A%7B%0A++++%22set_menu_activity%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0023%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%2C%0A++++%22set_menu%22%3A%7B%0A++++++%22sql_no%22%3A%22REP6410-0025%22%2C%0A++++++%22rel%22%3A%22menu_id%3Dmenu_id%22%0A++++%7D%0A++%7D%0A%7D%0A",
+	"latency":"1.0411ms"
+},
