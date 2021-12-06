@@ -84,7 +84,7 @@ func interfaceToMap(currentData interface{}, AllResult []map[string]interface{},
 			}
 		}
 	} else {
-
+		_ = "do something"
 	}
 	return AllResult, nil
 }

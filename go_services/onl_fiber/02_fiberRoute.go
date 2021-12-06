@@ -33,6 +33,9 @@ func fiberRoute(app *fiber.App) {
 	apiPost.Post("/sqln", postSqln)         // Query nested from POST DATA SQL1 & SQL2 & RELATION ==> host:port/api/key/post/sqln
 	apiPost.Post("/sqlnjson", postSqlnJson) // Query nested from POST DATA SQL1 & SQL2 & RELATION ==> host:port/api/key/post/sqlnjson
 
+	// no group as ==> host:port/api/key/cud/...
+	api.Post("/cud", updateDB) // Update Anytable with this apiPost
+
 	// Create Group as ==> host:port/test/...
 	apiTest := app.Group("/test")
 	apiTest.Get("/query1", queryNested1) //host:/port/test/query1

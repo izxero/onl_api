@@ -1,0 +1,1152 @@
+{
+	"timestamp":"06-Dec-2021 T22:08:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/112/get/sqlq/ss",
+	"queryParams":"sql=select+%2A+from++city",
+	"latency":"21.5554178s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"21.4075ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"236.6978ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"231.7323ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"231.2167ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"231.2131ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"230.7067ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"228.2557ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"254.9µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:08",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"4.3712ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:08",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/fonts/Roboto-Regular-webfont.woff2",
+	"queryParams":"",
+	"latency":"1.24ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:08",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/fonts/Roboto-Medium-webfont.woff2",
+	"queryParams":"",
+	"latency":"1.6055ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:11:08",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/webfonts/fa-solid-900.woff2",
+	"queryParams":"",
+	"latency":"371.8µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:14:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"17.9522ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:14:36",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/upd/",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:16:03",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/upd/",
+	"queryParams":"",
+	"latency":"967.3µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:55",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"18.9392ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"46.0105ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"25.6132ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"14.8689ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"4.075ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"507.4µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"517.4µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:19:56",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:00",
+	"ip":"127.0.0.1",
+	"status":"404",
+	"method":"POST",
+	"path":"/192.168.106.4/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:38",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"20.1338ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:38",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"3.9611ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:38",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:38",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:38",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:38",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:38",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"511.2µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:38",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:39",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"3.7513ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:20:40",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:21:22",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"19.5043ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"43.5812ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"22.6237ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"12.3654ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"1.0269ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"507.1µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"528.5µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:22:41",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"3.7479ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:27:11",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"1.0814ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:34:32",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"997.2µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:35:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:43:46",
+	"ip":"127.0.0.1",
+	"status":"404",
+	"method":"POST",
+	"path":"/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:43:50",
+	"ip":"127.0.0.1",
+	"status":"404",
+	"method":"POST",
+	"path":"/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:05",
+	"ip":"127.0.0.1",
+	"status":"404",
+	"method":"POST",
+	"path":"/api/112/cud/upd",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"18.9499ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"39.9759ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"9.7498ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"516.3µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"99.2µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/fonts/Roboto-Regular-webfont.woff2",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/fonts/Roboto-Medium-webfont.woff2",
+	"queryParams":"",
+	"latency":"61.2µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:07",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"17.4574ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"2.5743ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"516µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"1.0283ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"513.3µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"508.8µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:23",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"266.8µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"995.9µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:55",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"16.978ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"1.8109ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"9.2µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"40.9µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:44:59",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:45:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"996.8µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"18.9502ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"37.9224ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"8.7758ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"26.8µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"503µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:14",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:46:15",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"364.6µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"18.963ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"37.8043ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"16.4999ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"5.6437ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"515.4µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:25",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"213.5µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:26",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"949µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"18.5382ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"2.0061ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"513.3µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"61.2µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"231µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"509.9µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:50",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"813.6µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:47:51",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:46",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"19.9456ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"41.6127ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"11.8065ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"1.0286ms"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"518.3µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"0s"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"666µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:48:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"602µs"
+},
+{
+	"timestamp":"06-Dec-2021 T22:49:13",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"515.9µs"
+},

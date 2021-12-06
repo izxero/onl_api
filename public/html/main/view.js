@@ -35,7 +35,19 @@ var center = {
 }
 
 function login(){
-    webix.ajax("/api/111/query",function(text){
+    let data = {
+        ro_CLIENT_NAME:"Somchai",
+        pk_DOC_NO:"REP112233",
+        CREATE_DATE:new Date(),
+        CREATE_BY:"Alex"
+    }
+    let post = {
+        OPER:"upd",
+        TABLE:"sql2excel",
+        DATA :JSON.stringify(data),
+    }
+    console.log(post);
+    webix.ajax().post("/api/112/cud/",post,function(text){
         console.log(text);
     });
 }
