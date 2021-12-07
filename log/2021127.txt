@@ -1,0 +1,117 @@
+{
+	"timestamp":"07-Dec-2021 T10:06:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"87.6178ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.js",
+	"queryParams":"",
+	"latency":"336.2ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/webix.css",
+	"queryParams":"",
+	"latency":"335.4308ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech01.js",
+	"queryParams":"",
+	"latency":"363.0144ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech02.js",
+	"queryParams":"",
+	"latency":"373.5258ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/onlfintech/onlfintech.css",
+	"queryParams":"",
+	"latency":"383.5071ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/css/all.css",
+	"queryParams":"",
+	"latency":"393.5478ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:58",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"68.3708ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:59",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/icon/tech.png",
+	"queryParams":"",
+	"latency":"8.7488ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:59",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/fonts/Roboto-Regular-webfont.woff2",
+	"queryParams":"",
+	"latency":"11.7543ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:59",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/webix/codebase/fonts/Roboto-Medium-webfont.woff2",
+	"queryParams":"",
+	"latency":"17.5222ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:06:59",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/library/fontawesome/webfonts/fa-solid-900.woff2",
+	"queryParams":"",
+	"latency":"37.3777ms"
+},
+{
+	"timestamp":"07-Dec-2021 T10:08:06",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/",
+	"queryParams":"",
+	"latency":"1.992ms"
+},
