@@ -121,3 +121,17 @@ func QuerySqlColumnTypes(sql string, injection bool) ([]interface{}, error) {
 	}
 	return columnsData, nil
 }
+
+func QueryLastDoc(CTRLNO string, PREFIX string) (string, error) {
+	DB := ConnectDB()
+	defer DB.Close()
+	lastdoc := ""
+	sql := "select runno from last_doc where CTRLNO = :1 and DOCNO = :2"
+	rows := DB.QueryRow(sql, CTRLNO, PREFIX)
+	err := rows.Scan(&lastdoc)
+	println(lastdoc)
+	if err != nil {
+		return "", err
+	}
+	return lastdoc, nil
+}

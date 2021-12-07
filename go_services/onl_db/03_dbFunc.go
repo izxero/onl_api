@@ -57,4 +57,3 @@ func SqlInjection(sql string) error {
 	}
 	return nil
 }
-

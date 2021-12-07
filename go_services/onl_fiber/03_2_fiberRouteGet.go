@@ -106,3 +106,14 @@ func sqlnJson(c *fiber.Ctx) error {
 	}
 	return c.JSON(res)
 }
+
+func urlJson(c *fiber.Ctx) error {
+	url := c.Query("url")
+	println(url)
+	res, err := onl_func.UrlJson(url)
+	// res, err := onl_func.UrlJson("https://dataapi.moc.go.th/ditp-activity-types")
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.JSON(res)
+}
