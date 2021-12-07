@@ -9,6 +9,16 @@ import (
 	"github.com/savirusing/onl_api/go_services/onl_func"
 )
 
+func getResp(c *fiber.Ctx)error{
+	resp, err := http.Get("http://example.com/")
+	if err != nil {
+		// handle error
+	}
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	return nil
+}
+
 func queryNested1(c *fiber.Ctx) error {
 	sql := "select id ,vchr_no,db,cr from gl_vchr v where id like '11%' order by id"
 	res, err := onl_db.QuerySql(sql, true)
