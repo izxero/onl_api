@@ -1,6 +1,7 @@
 package onl_db
 
 import (
+	"database/sql"
 	"fmt"
 	"strconv"
 )
@@ -126,12 +127,31 @@ func QueryLastDoc(CTRLNO string, PREFIX string) (string, error) {
 	DB := ConnectDB()
 	defer DB.Close()
 	lastdoc := ""
-	sql := "select runno from last_doc where CTRLNO = :1 and DOCNO = :2"
-	rows := DB.QueryRow(sql, CTRLNO, PREFIX)
+	query := "select runno from last_doc_t where CTRLNO = :1 and DOCNO = :2"
+	rows := DB.QueryRow(query, CTRLNO, PREFIX)
 	err := rows.Scan(&lastdoc)
-	println(lastdoc)
+	if err != nil {
+		// case err
+		if err != sql.ErrNoRows {
+			return "", err
+		}
+		// case err b/c no row found
+		query = "INSERT INTO last_doc_t (CTRLNO, DOCNO, RUNNO) VALUES (:1,:2,:3)"
+		_, err := DB.Exec(query, CTRLNO, PREFIX, 1)
+		if err != nil {
+			return "", err
+		}
+		new_doc_no := fmt.Sprintf("%v-%04d", PREFIX, 1)
+		return new_doc_no, nil
+	}
+	// case not err
+	new_doc, _ := strconv.Atoi(lastdoc)
+	new_doc++
+	query = "UPDATE last_doc_t SET RUNNO = :1 WHERE CTRLNO = :2 AND DOCNO = :3"
+	_, err = DB.Exec(query, new_doc, CTRLNO, PREFIX)
 	if err != nil {
 		return "", err
 	}
-	return lastdoc, nil
+	new_doc_no := fmt.Sprintf("%v-%04d", PREFIX, new_doc)
+	return new_doc_no, nil
 }

@@ -3,7 +3,8 @@ webix.ready(function(){
         webix.CustomScroll.init();
 	webix.ui({
 		rows:[
-            center,
+            // center,
+            postform,
 		]
 	});
 });
@@ -24,6 +25,44 @@ var loginForm = {
     }]
 }
 
+var postform = {
+    cols:[
+        {},
+        {
+            view:"form",
+            id:"lastdoc_form",
+            rows:[
+                {view:"text",width:180,labelWidth:80,labelAlign:"right",label:"CTRLNO",name:"CTRLNO",value:"sql2excel"},
+                {view:"text",width:180,labelWidth:80,labelAlign:"right",label:"PREFIX",name:"PREFIX",value:"REP6499"},
+                {},
+                {view:"button",label:"Find last doc",width:150,align:"center",css:"webix_primary",click:lastdoc},
+            ]
+        },
+        {
+            view:"form",
+            id:"sql2excel_form",
+            rows:[
+                {width:600,cols:[
+                    {view:"text",labelWidth:110,labelAlign:"right",label:"DOC_NO",name:"DOC_NO"},
+                    {view:"text",labelWidth:110,labelAlign:"right",label:"REP_NAME",name:"REP_NAME"},
+                ]},
+                {width:600,cols:[
+                    {view:"text",labelWidth:110,labelAlign:"right",label:"CREATE_BY",name:"CREATE_BY"},
+                    // {view:"datepicker",labelWidth:110,labelAlign:"right",label:"CREATE_DATE",name:"CREATE_DATE",value:new Date()},
+                ]},
+                {view:"textarea",labelWidth:110,labelAlign:"right",label:"SQL_TEXT",name:"SQL_TEXT"},
+                {cols:[
+                    {},
+                    {view:"button",label:"Save2excel",width:150,align:"center",css:"webix_primary",click:save},
+                    {view:"button",label:"Full Process",width:150,align:"center",css:"webix_danger",click:fullSave},
+                    {},
+                ]},
+            ]
+        },
+        {},
+    ]
+}
+
 var center = {
     rows:[
         {},
@@ -36,38 +75,46 @@ var center = {
     ]
 }
 
-function save(){
-    let data = {
-        ro_CLIENT_NAME:"Somchai",
-        pk:"DOC_NO",
-        DOC_NO:"NEW",
-        CREATE_DATE:new Date(),
-        CREATE_BY:"Alex"
+function lastdoc(){
+    let lasdoc_data = $$("lastdoc_form").getValues();
+    console.log(lasdoc_data);
+    if ((lasdoc_data.CTRLNO == "")||(lasdoc_data.PREFIX == "")){
+        webix.message("please enter lastdoc data");
+    }else{
+        webix.ajax().post("/api/112/cud/lastdoc",lasdoc_data,function(text){
+            let res = JSON.parse(text);
+            console.log(text);
+            if (res.status=="complete"){
+                $$("sql2excel_form").setValues({DOC_NO:res.lastdoc},true)
+            }
+        });
     }
+}
+
+function save(){
+    let data = $$("sql2excel_form").getValues();
+    data.pk = "DOC_NO";
     let post = {
         OPER:"upd",
         TABLE:"sql2excel",
     }
     post.DATA = JSON.stringify(data);
-    // webix.ajax().post("/api/112/cud/lastdoc",LASTDOC_DATA).then(function(lastdoc){
-    //     data.DOC_NO = lastdoc;
-    //     post.DATA = JSON.stringify(data);
-    // });
-    // console.log(post);
-    // ajax login
-    // get lastdoc
-    //
     webix.ajax().post("/api/112/cud/up",post,function(text){
         console.log(text);
     });
 }
 
-function lastdoc(){
+function fullSave(){
+    let data = $$("sql2excel_form").getValues();
+    data.pk = "DOC_NO";
     let post = {
-        CTRLNO:"LOAD_COUNTER",
-        PREFIX:"BAY20080206",
+        OPER:"upd",
+        TABLE:"sql2excel",
+        CTRLNO:"sql2excel",
+        PREFIX:"REP6499",
     }
-    webix.ajax().post("/api/112/cud/lastdoc",post,function(text){
+    post.DATA = JSON.stringify(data);
+    webix.ajax().post("/api/112/cud/up2",post,function(text){
         console.log(text);
     });
 }

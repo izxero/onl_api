@@ -38,6 +38,7 @@ func fiberRoute(app *fiber.App) {
 	apiCud := api.Group("/cud")
 	apiCud.Post("/lastdoc", getLastDoc) // Update any table ==> host:port/api/key/cud/lastDoc
 	apiCud.Post("/up", updateDB)        // Update any table ==> host:port/api/key/cud/up
+	apiCud.Post("/up2", updateDB2)      // Update any table ==> host:port/api/key/cud/up
 
 	// Create Group as ==> host:port/test/...
 	apiTest := app.Group("/test")
