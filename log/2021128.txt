@@ -2095,3 +2095,48 @@
 	"queryParams":"",
 	"latency":"57.1204ms"
 },
+{
+	"timestamp":"08-Dec-2021 T18:54:43",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/",
+	"queryParams":"",
+	"latency":"20.0733ms"
+},
+{
+	"timestamp":"08-Dec-2021 T18:54:43",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/html/main/view.js",
+	"queryParams":"",
+	"latency":"36.5104ms"
+},
+{
+	"timestamp":"08-Dec-2021 T18:55:12",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/up2",
+	"queryParams":"",
+	"latency":"342.3493ms"
+},
+{
+	"timestamp":"08-Dec-2021 T18:55:47",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/up2",
+	"queryParams":"",
+	"latency":"225.7522ms"
+},
+{
+	"timestamp":"08-Dec-2021 T18:56:34",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"POST",
+	"path":"/api/112/cud/up2",
+	"queryParams":"",
+	"latency":"233.5313ms"
+},

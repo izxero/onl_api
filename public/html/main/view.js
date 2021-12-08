@@ -43,7 +43,7 @@ var postform = {
             id:"sql2excel_form",
             rows:[
                 {width:600,cols:[
-                    {view:"text",labelWidth:110,labelAlign:"right",label:"DOC_NO",name:"DOC_NO"},
+                    {view:"text",labelWidth:110,labelAlign:"right",label:"DOC_NO",name:"DOC_NO",value:"NEW"},
                     {view:"text",labelWidth:110,labelAlign:"right",label:"REP_NAME",name:"REP_NAME"},
                 ]},
                 {width:600,cols:[

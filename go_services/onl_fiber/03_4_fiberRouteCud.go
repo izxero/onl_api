@@ -118,12 +118,12 @@ func updateDB2(c *fiber.Ctx) error {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
 	pk_value := fmt.Sprintf("'%v'", reflect_pk_value)
-	if strings.Contains(pk_value, "NEW") {
+	if strings.Contains(strings.ToLower(pk_value), "new") {
 		res, err := onl_db.QueryLastDoc(post_values.CTRLNO, post_values.PREFIX)
 		if err != nil {
 			return c.JSON(onl_func.ErrorReturn(err, c))
 		}
-		pk_value = res
+		pk_value = fmt.Sprintf("'%v'", res)
 		query := fmt.Sprintf("INSERT INTO %v (%v) VALUES ('%v')", post_values.Table, pk_key, pk_value)
 		DB := onl_db.ConnectDB()
 		defer DB.Close()
@@ -153,14 +153,14 @@ func updateDB2(c *fiber.Ctx) error {
 		}
 	}
 	cols_vals_text := strings.Join(cols_vals, ", ")
-	stmt := fmt.Sprintf("UPDATE %v set %v where %v = '%v'", post_values.Table, cols_vals_text, pk_key, pk_value)
+	stmt := fmt.Sprintf("UPDATE %v set %v where %v = %v", post_values.Table, cols_vals_text, pk_key, pk_value)
+	println(stmt)
 	DB := onl_db.ConnectDB()
 	defer DB.Close()
 	_, err := DB.Exec(stmt)
 	if err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
-	println(stmt)
 	return c.JSON(fiber.Map{
 		"status": "complete",
 		"sql":    stmt,
