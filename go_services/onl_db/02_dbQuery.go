@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"strconv"
+	"time"
 )
 
 func SqlFromSQL2Excel(sql_no string) (string, error) {
@@ -64,6 +65,15 @@ func QuerySql(sql string, injection bool) ([]map[string]interface{}, error) {
 					number_val, _ = strconv.ParseFloat(val.(string), 64)
 				}
 				resultMap[columns[i]] = number_val
+			case "DATE":
+				if val != nil && val != "" {
+					date_val := val.(time.Time)
+					date := fmt.Sprintf("%v", date_val.Format("2006-01-02 15:04:05"))
+					// 	// resultMap[columns[i]] = date_val.String()
+					resultMap[columns[i]] = date
+				} else {
+					resultMap[columns[i]] = val
+				}
 			default:
 				resultMap[columns[i]] = val
 			}
@@ -117,7 +127,7 @@ func QuerySqlColumnTypes(sql string, injection bool) ([]interface{}, error) {
 		currentCols["name"] = v.Name()
 		currentCols["length"], _ = v.Length()
 		currentCols["type"] = v.DatabaseTypeName()
-		fmt.Println(currentCols)
+		// fmt.Println(currentCols)
 		columnsData = append(columnsData, currentCols)
 	}
 	return columnsData, nil
