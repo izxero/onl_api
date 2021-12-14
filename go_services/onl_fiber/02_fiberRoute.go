@@ -37,6 +37,7 @@ func fiberRoute(app *fiber.App) {
 	// Create Group as ==> host:port/api/key/cud/...
 	apiCud := api.Group("/cud")
 	apiCud.Post("/upd", updateDB) // Update any table ==> host:port/api/key/cud/up
+	apiCud.Post("/del", deleteDB) // Update any table ==> host:port/api/key/cud/up
 
 	// Create Group as ==> host:port/test/...
 	apiTest := app.Group("/test")
@@ -44,6 +45,7 @@ func fiberRoute(app *fiber.App) {
 	apiTest.Get("/query2", queryNested2) //host:/port/test/query2
 	apiTest.Post("/readPost", readPost)  //try reading post without struct
 	apiTest.Get("/sqlJson", sqlJson)     // try query sql as master-detail-... from Json relation
+	apiTest.Get("/keyrender/:key", keyrender)
 
 	// Main Path no Group create ==> host:port/...
 	appRender(app, "/", "html/main/index", "html_template/webix_header") //render htnl/main/index

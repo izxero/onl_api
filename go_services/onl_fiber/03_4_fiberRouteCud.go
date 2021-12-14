@@ -98,6 +98,49 @@ func updateDB(c *fiber.Ctx) error {
 	})
 }
 
+func deleteDB(c *fiber.Ctx) error {
+	DB := onl_db.ConnectDB()
+	defer DB.Close()
+	type POST struct {
+		KEYT  string `json:"KEYT"`
+		TABLE string `json:"TABLE"`
+		DATA  string `json:"DATA"`
+	}
+	post_values := new(POST)
+	if err := c.BodyParser(post_values); err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	table_name, err := Decrypt(post_values.KEYT)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	if !strings.EqualFold(strings.ToLower(table_name), strings.ToLower(post_values.TABLE)) {
+		err := errors.New("key does not match to table")
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	data_json := make(map[string]interface{})
+	if err := json.Unmarshal([]byte(post_values.DATA), &data_json); err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	db_data := reflect.ValueOf(data_json)
+	where_text_arr := []string{}
+	for _, key_reflect := range db_data.MapKeys() {
+		key := fmt.Sprintf("%v", key_reflect)
+		text := fmt.Sprintf("%v = :%v", key, key)
+		where_text_arr = append(where_text_arr, text)
+	}
+	where_text := strings.Join(where_text_arr, " and ")
+	stmt := fmt.Sprintf("DELETE FROM %v WHERE %v\n", table_name, where_text)
+	_, err = DB.NamedExec(stmt, data_json)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.JSON(fiber.Map{
+		"status": "complete",
+		"delete": post_values.DATA,
+	})
+}
+
 func checkIsDateConvert(value interface{}) interface{} {
 	if value != nil {
 		t, err := time.Parse(time.RFC3339, value.(string))

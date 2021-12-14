@@ -77,3 +77,12 @@ func sqlJson(c *fiber.Ctx) error {
 	}
 	return c.JSON(res)
 }
+
+func keyrender(c *fiber.Ctx) error {
+	key := c.Params("key")
+	en_key, err := Encrypt(key)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.SendString(en_key)
+}
