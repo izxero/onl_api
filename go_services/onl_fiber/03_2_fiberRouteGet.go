@@ -33,7 +33,7 @@ func sqlh(c *fiber.Ctx) error {
 	if err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
-	columns, err := onl_db.QuerySqlColumns(sql, true)
+	columns, err := onl_db.QuerySqlColumns(sql, nil, true)
 	if err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}

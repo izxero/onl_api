@@ -139,11 +139,12 @@ func deleteDB(c *fiber.Ctx) error {
 		"status": "complete",
 		"delete": post_values.DATA,
 	})
+
 }
 
 func checkIsDateConvert(value interface{}) interface{} {
 	if value != nil {
-		t, err := time.Parse(time.RFC3339, value.(string))
+		t, err := time.Parse(time.RFC3339, fmt.Sprintf("%v", value))
 		if err != nil {
 			return value
 		} else {

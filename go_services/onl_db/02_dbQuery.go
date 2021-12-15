@@ -86,7 +86,7 @@ func QuerySql(sql string, injection bool) ([]map[string]interface{}, error) {
 	return allMaps, nil
 }
 
-func QuerySqlColumns(sql string, injection bool) ([]string, error) {
+func NamedQuerySql(sql string, data map[string]interface{}, injection bool) ([]map[string]interface{}, error) {
 	DB := ConnectDB()
 	defer DB.Close()
 	if injection {
@@ -94,7 +94,74 @@ func QuerySqlColumns(sql string, injection bool) ([]string, error) {
 			return nil, err
 		}
 	}
-	rows, err := DB.Query(sql)
+	rows, err := DB.NamedQuery(sql, data)
+	if err != nil {
+		return nil, err
+	}
+	columns, err := rows.Columns()
+	if err != nil {
+		return nil, err
+	}
+	columnsTypes, err := rows.ColumnTypes()
+	if err != nil {
+		return nil, err
+	}
+	typeArr := []string{}
+	for _, v := range columnsTypes {
+		typeArr = append(typeArr, v.DatabaseTypeName())
+	}
+	var allMaps []map[string]interface{}
+	values := make([]interface{}, len(columns))
+	pointers := make([]interface{}, len(columns))
+	for i := range values {
+		pointers[i] = &values[i]
+	}
+	for rows.Next() {
+		err := rows.Scan(pointers...)
+		if err != nil {
+			return nil, err
+		}
+		resultMap := make(map[string]interface{})
+		for i, val := range values {
+			switch typeArr[i] {
+			case "NUMBER":
+				var number_val float64
+				if val == nil {
+					number_val = 0
+				} else {
+					number_val, _ = strconv.ParseFloat(val.(string), 64)
+				}
+				resultMap[columns[i]] = number_val
+			case "DATE":
+				if val != nil && val != "" {
+					date_val := val.(time.Time)
+					date := fmt.Sprintf("%v", date_val.Format("2006-01-02 15:04:05"))
+					// 	// resultMap[columns[i]] = date_val.String()
+					resultMap[columns[i]] = date
+				} else {
+					resultMap[columns[i]] = val
+				}
+			default:
+				resultMap[columns[i]] = val
+			}
+		}
+		allMaps = append(allMaps, resultMap)
+	}
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+	return allMaps, nil
+}
+
+func QuerySqlColumns(sql string, data map[string]interface{}, injection bool) ([]string, error) {
+	DB := ConnectDB()
+	defer DB.Close()
+	if injection {
+		if err := SqlInjection(sql); err != nil {
+			return nil, err
+		}
+	}
+	rows, err := DB.NamedQuery(sql, data)
 	if err != nil {
 		return nil, err
 	}

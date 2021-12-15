@@ -13,13 +13,22 @@ import (
 // Query from sql with post SQL (no sql_no and replace func)
 func postSqlq(c *fiber.Ctx) error {
 	type POST struct {
-		SQL string `json:"SQL"`
+		SQL  string `json:"SQL"`
+		DATA string `json:"DATA"`
 	}
 	post_values := new(POST)
 	if err := c.BodyParser(post_values); err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
-	res, err := onl_db.QuerySql(post_values.SQL, true)
+	data_json := make(map[string]interface{})
+	if post_values.DATA == "" {
+		data_json = nil
+	} else {
+		if err := json.Unmarshal([]byte(post_values.DATA), &data_json); err != nil {
+			return c.JSON(onl_func.ErrorReturn(err, c))
+		}
+	}
+	res, err := onl_db.NamedQuerySql(post_values.SQL, data_json, true)
 	if err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
@@ -29,13 +38,22 @@ func postSqlq(c *fiber.Ctx) error {
 // Query Columns from sql with post SQL (no sql_no and replace func)
 func postSqlh(c *fiber.Ctx) error {
 	type POST struct {
-		SQL string `json:"SQL"`
+		SQL  string `json:"SQL"`
+		DATA string `json:"DATA"`
 	}
 	post_values := new(POST)
 	if err := c.BodyParser(post_values); err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
-	columns, err := onl_db.QuerySqlColumns(post_values.SQL, true)
+	data_json := make(map[string]interface{})
+	if post_values.DATA == "" {
+		data_json = nil
+	} else {
+		if err := json.Unmarshal([]byte(post_values.DATA), &data_json); err != nil {
+			return c.JSON(onl_func.ErrorReturn(err, c))
+		}
+	}
+	columns, err := onl_db.QuerySqlColumns(post_values.SQL, data_json, true)
 	if err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
 	}
