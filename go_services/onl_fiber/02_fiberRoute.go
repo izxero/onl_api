@@ -39,6 +39,11 @@ func fiberRoute(app *fiber.App) {
 	apiCud.Post("/upd", updateDB) // Update any table ==> host:port/api/key/cud/up
 	apiCud.Post("/del", deleteDB) // Update any table ==> host:port/api/key/cud/up
 
+	apiFile := api.Group("/file")
+	apiFile.Post("/read", readDirectory)
+	apiFile.Post("/fileupdt", fileUploadTemp)
+	apiFile.Post("/fileupd", fileUpload)
+
 	// Create Group as ==> host:port/test/...
 	apiTest := app.Group("/test")
 	apiTest.Get("/query1", queryNested1) //host:/port/test/query1
