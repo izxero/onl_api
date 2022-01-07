@@ -25,6 +25,24 @@ func sqlq(c *fiber.Ctx) error {
 	return c.JSON(result)
 }
 
+// Query with header mapping from sql_no (or sql)
+func sqlqh(c *fiber.Ctx) error {
+	sql_no := c.Params("sql_no")
+	sql, err := onl_db.GetSqlOrSqlNo(sql_no, "", c)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	col_heads, err := onl_db.QueryColumnHeading(sql_no)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	result, err := onl_db.QuerySqlH(sql, col_heads, true)
+	if err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	return c.JSON(result)
+}
+
 // Query Columns from sql_no (or sql)
 func sqlh(c *fiber.Ctx) error {
 	sql_no := c.Params("sql_no")

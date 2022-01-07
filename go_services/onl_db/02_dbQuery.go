@@ -2,6 +2,7 @@ package onl_db
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"strconv"
 	"time"
@@ -76,6 +77,89 @@ func QuerySql(sql string, injection bool) ([]map[string]interface{}, error) {
 				}
 			default:
 				resultMap[columns[i]] = val
+			}
+		}
+		allMaps = append(allMaps, resultMap)
+	}
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+	return allMaps, nil
+}
+
+func QuerySqlH(sql string, col_heads map[string]string, injection bool) ([]map[string]interface{}, error) {
+	DB := ConnectDB()
+	defer DB.Close()
+	if injection {
+		if err := SqlInjection(sql); err != nil {
+			return nil, err
+		}
+	}
+	rows, err := DB.Query(sql)
+	if err != nil {
+		return nil, err
+	}
+	columns, err := rows.Columns()
+	if err != nil {
+		return nil, err
+	}
+	columnsTypes, err := rows.ColumnTypes()
+	if err != nil {
+		return nil, err
+	}
+	typeArr := []string{}
+	for _, v := range columnsTypes {
+		typeArr = append(typeArr, v.DatabaseTypeName())
+	}
+	var allMaps []map[string]interface{}
+	values := make([]interface{}, len(columns))
+	pointers := make([]interface{}, len(columns))
+	for i := range values {
+		pointers[i] = &values[i]
+	}
+	for rows.Next() {
+		err := rows.Scan(pointers...)
+		if err != nil {
+			return nil, err
+		}
+		resultMap := make(map[string]interface{})
+		for i, val := range values {
+			switch typeArr[i] {
+			case "NUMBER":
+				var number_val float64
+				if val == nil {
+					number_val = 0
+				} else {
+					number_val, _ = strconv.ParseFloat(val.(string), 64)
+				}
+				heading := col_heads[columns[i]]
+				if heading == "" {
+					heading = columns[i]
+				}
+				resultMap[heading] = number_val
+			case "DATE":
+				if val != nil && val != "" {
+					date_val := val.(time.Time)
+					date := fmt.Sprintf("%v", date_val.Format("2006-01-02 15:04:05"))
+					// 	// resultMap[columns[i]] = date_val.String()
+					heading := col_heads[columns[i]]
+					if heading == "" {
+						heading = columns[i]
+					}
+					resultMap[heading] = date
+				} else {
+					heading := col_heads[columns[i]]
+					if heading == "" {
+						heading = columns[i]
+					}
+					resultMap[heading] = val
+				}
+			default:
+				heading := col_heads[columns[i]]
+				if heading == "" {
+					heading = columns[i]
+				}
+				resultMap[heading] = val
 			}
 		}
 		allMaps = append(allMaps, resultMap)
@@ -231,4 +315,26 @@ func QueryLastDoc(CTRLNO string, PREFIX string) (string, error) {
 	}
 	new_doc_no := fmt.Sprintf("%v-%04d", PREFIX, new_doc)
 	return new_doc_no, nil
+}
+
+func QueryColumnHeading(doc_no string) (map[string]string, error) {
+	DB := ConnectDB()
+	defer DB.Close()
+	col_head := ""
+	query := "select COLUMN_HEADING1 from sql2excel where DOC_NO = :1"
+	rows := DB.QueryRow(query, doc_no)
+	err := rows.Scan(&col_head)
+	if err != nil {
+		// case err
+		if err != sql.ErrNoRows {
+			return nil, nil
+		} else {
+			return nil, err
+		}
+	}
+	col_heads := map[string]string{}
+	if err := json.Unmarshal([]byte(col_head), &col_heads); err != nil {
+		return nil, err
+	}
+	return col_heads, nil
 }
