@@ -25,3 +25,21 @@
 	"queryParams":"",
 	"latency":"329.3135ms"
 },
+{
+	"timestamp":"07-Jan-2022 T21:42:46",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/101/get/sqlqh/REP6401-0001",
+	"queryParams":"",
+	"latency":"749.34ms"
+},
+{
+	"timestamp":"07-Jan-2022 T21:43:51",
+	"ip":"127.0.0.1",
+	"status":"200",
+	"method":"GET",
+	"path":"/api/101/get/sqlq/REP6401-0001",
+	"queryParams":"",
+	"latency":"546.6833ms"
+},
