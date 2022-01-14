@@ -13,6 +13,14 @@ import (
 	"github.com/savirusing/onl_api/go_services/onl_func"
 )
 
+type Property struct {
+	Table  string `json:"TABLE"`
+	Data   string `json:"DATA"`
+	CTRLNO string `json:"CTRLNO"`
+	PREFIX string `json:"PREFIX"`
+	PK     string `json:"PK"`
+}
+
 func updateDB(c *fiber.Ctx) error {
 	DB := onl_db.ConnectDB()
 	defer DB.Close()
@@ -142,11 +150,204 @@ func deleteDB(c *fiber.Ctx) error {
 
 }
 
+func updateDB2(c *fiber.Ctx) error {
+	property := new(Property)
+	if err := c.BodyParser(property); err != nil {
+		return c.JSON(onl_func.ErrorReturn(err, c))
+	}
+	data_json := make(map[string]interface{})
+	//json as multiple data
+	if err := json.Unmarshal([]byte(property.Data), &data_json); err != nil {
+		var data_jsons []map[string]interface{}
+		if err := json.Unmarshal([]byte(property.Data), &data_jsons); err != nil {
+			return c.JSON(onl_func.ErrorReturn(err, c))
+		} else {
+			err = updateRows(property, data_jsons)
+			if err != nil {
+				return c.JSON(onl_func.ErrorReturn(err, c))
+			} else {
+				return c.JSON(fiber.Map{
+					"status": "complete",
+				})
+			}
+		}
+		//json as single data
+	} else {
+		pk_val, err := updateRow(property, data_json)
+		if err != nil {
+			return c.JSON(onl_func.ErrorReturn(err, c))
+		}
+		return c.JSON(fiber.Map{
+			"status":    "complete",
+			property.PK: pk_val,
+		})
+	}
+}
+
+func updateRow(property *Property, row_data map[string]interface{}) (string, error) {
+	//connect to database
+	DB := onl_db.ConnectDB()
+	defer DB.Close()
+
+	//check if pk key and pk value found
+	_, err := getPKVal(property, row_data)
+	if err != nil {
+		return "", err
+	}
+
+	//get sql command template for exec in NamedExec
+	stmt, err := getSqlCommand(property, row_data)
+	if err != nil {
+		return "", err
+	}
+
+	//if pk value is new, if true then insert with new last_doc
+	row_data, err = AddIfNew(property, row_data)
+	if err != nil {
+		return "", err
+	}
+
+	//update the row with pk value
+	row_data = convertDateInRow(property, row_data)
+	_, err = DB.NamedExec(stmt, row_data)
+	if err != nil {
+		return "", err
+	}
+	pk_val := fmt.Sprintf("%v", row_data[property.PK])
+
+	return pk_val, nil
+}
+
+func updateRows(property *Property, rows_data []map[string]interface{}) error {
+	//connect to database
+	DB := onl_db.ConnectDB()
+	defer DB.Close()
+
+	//check if pk key and pk value found
+	_, err := getPKVal(property, rows_data[0])
+	if err != nil {
+		return err
+	}
+
+	//loop for each array (data of each row)
+	for _, v := range rows_data {
+		//get sql command template for exec in NamedExec
+		stmt, err := getSqlCommand(property, v)
+		if err != nil {
+			return err
+		}
+
+		//check if pk key exist and find if pk value is new, if true then insert with new last_doc
+		row_data, err := AddIfNew(property, v)
+		if err != nil {
+			return err
+		}
+
+		//update the row with pk value
+		row_data = convertDateInRow(property, row_data)
+		fmt.Println(row_data)
+		_, err = DB.NamedExec(stmt, row_data)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+func getPKVal(property *Property, row_data map[string]interface{}) (string, error) {
+	db_data := reflect.ValueOf(row_data)
+	pk_key := property.PK
+	if pk_key == "" {
+		return "", errors.New("PK not found")
+	}
+	reflect_pk_value := db_data.MapIndex(reflect.ValueOf(pk_key))
+	if !reflect_pk_value.IsValid() {
+		return "", errors.New("PK Value not found")
+	}
+	pk_value := fmt.Sprintf("%v", reflect_pk_value)
+	return pk_value, nil
+}
+
+func AddIfNew(property *Property, row_data map[string]interface{}) (map[string]interface{}, error) {
+	DB := onl_db.ConnectDB()
+	defer DB.Close()
+	pk_value, err := getPKVal(property, row_data)
+	if err != nil {
+		return nil, err
+	}
+	if strings.Contains(strings.ToLower(pk_value), "new") {
+		res, err := onl_db.QueryLastDoc(property.CTRLNO, property.PREFIX)
+		if err != nil {
+			return nil, err
+		}
+		row_data[property.PK] = res
+		query := fmt.Sprintf("INSERT INTO %v (%v) VALUES (:%v)", property.Table, property.PK, property.PK)
+		// println(query)
+		_, err = DB.NamedExec(query, row_data)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return row_data, nil
+}
+
+func getSqlCommand(property *Property, row_data map[string]interface{}) (string, error) {
+	db_data := reflect.ValueOf(row_data)
+	cols_vals := []string{}
+	for _, key_reflect := range db_data.MapKeys() {
+		key := fmt.Sprintf("%v", key_reflect)
+		lower_key := strings.ToLower(key)
+		if strings.Contains(lower_key, "ro_") { // case of found prefix of ro (read only)
+			// fmt.Println("Found read-only field", key)
+			_ = "do nothing (this is read-only field)"
+		} else if strings.Contains(key, property.PK) { // case of found pk key field and value
+			// fmt.Println("Found primary key value :", db_data.MapIndex(key_reflect))
+			_ = "do nothing (this is pk field and value)"
+		} else if key == "pk" || key == "PK" { // case of found pk field name
+			// fmt.Println("Found primary key field : ", db_data.MapIndex(key_reflect))
+			_ = "do nothing (this is pk field)"
+		} else { // case of is normal column
+			// value := db_data.MapIndex(key_reflect)
+			row_data[key] = checkIsDateConvert(row_data[key])
+			col_val := fmt.Sprintf("%v = :%v", key, key)
+			cols_vals = append(cols_vals, col_val)
+		}
+	}
+	cols_vals_text := strings.Join(cols_vals, ", ")
+	stmt := fmt.Sprintf("UPDATE %v set %v where %v = :%v", property.Table, cols_vals_text, property.PK, property.PK)
+	return stmt, nil
+}
+
+func convertDateInRow(property *Property, row_data map[string]interface{}) map[string]interface{} {
+	db_data := reflect.ValueOf(row_data)
+	for _, key_reflect := range db_data.MapKeys() {
+		key := fmt.Sprintf("%v", key_reflect)
+		lower_key := strings.ToLower(key)
+		if strings.Contains(lower_key, "ro_") { // case of found prefix of ro (read only)
+			_ = "do nothing (this is read-only field)"
+		} else if strings.Contains(key, property.PK) { // case of found pk key field and value
+			_ = "do nothing (this is pk field and value)"
+		} else if key == "pk" || key == "PK" { // case of found pk field name
+			_ = "do nothing (this is pk field)"
+		} else { // case of is normal column
+			row_data[key] = checkIsDateConvert(row_data[key])
+		}
+	}
+	return row_data
+}
+
 func checkIsDateConvert(value interface{}) interface{} {
 	if value != nil {
 		t, err := time.Parse(time.RFC3339, fmt.Sprintf("%v", value))
 		if err != nil {
-			return value
+			t, err = time.Parse("2006-01-02 03:04:05", fmt.Sprintf("%v", value))
+			if err != nil {
+				if fmt.Sprintf("%v", value) == "" {
+					return nil
+				}
+				return value
+			}
+			return t
 		} else {
 			return t
 		}

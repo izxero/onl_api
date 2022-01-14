@@ -37,8 +37,9 @@ func fiberRoute(app *fiber.App) {
 
 	// Create Group as ==> host:port/api/key/cud/...
 	apiCud := api.Group("/cud")
-	apiCud.Post("/upd", updateDB) // Update any table ==> host:port/api/key/cud/up
-	apiCud.Post("/del", deleteDB) // Update any table ==> host:port/api/key/cud/up
+	apiCud.Post("/upd", updateDB)   // Update any row in table ==> host:port/api/key/cud/upd
+	apiCud.Post("/del", deleteDB)   // Delete any row in table ==> host:port/api/key/cud/del
+	apiCud.Post("/upda", updateDB2) // Update any row or rows in table ==> host:port/api/key/cud/upda
 
 	apiFile := api.Group("/file")
 	apiFile.Post("/read", readDirectory)

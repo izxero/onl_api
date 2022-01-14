@@ -33,6 +33,7 @@ func ReplaceWithParams(sql string, c *fiber.Ctx) string {
 			sql = strings.Replace(sql, key, e, -1)
 		}
 	}
+	sql = strings.Replace(sql, ";", "", -1)
 	return sql
 }
 
