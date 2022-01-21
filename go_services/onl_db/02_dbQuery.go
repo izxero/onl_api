@@ -313,7 +313,7 @@ func QueryLastDoc(CTRLNO string, PREFIX string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	new_doc_no := fmt.Sprintf("%v-%04d", PREFIX, new_doc)
+	new_doc_no := fmt.Sprintf("%v_%04d", PREFIX, new_doc)
 	return new_doc_no, nil
 }
 
