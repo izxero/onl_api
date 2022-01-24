@@ -151,6 +151,7 @@ func deleteDB(c *fiber.Ctx) error {
 }
 
 func updateDB2(c *fiber.Ctx) error {
+	//read from post_data
 	property := new(Property)
 	if err := c.BodyParser(property); err != nil {
 		return c.JSON(onl_func.ErrorReturn(err, c))
@@ -185,31 +186,35 @@ func updateDB2(c *fiber.Ctx) error {
 }
 
 func updateRow(property *Property, row_data map[string]interface{}) (string, error) {
+	//get coluumns in table
+	columnsType, err := ColumnTypes(property.Table)
+	if err != nil {
+		return "", err
+	}
 	//connect to database
 	DB := onl_db.ConnectDB()
 	defer DB.Close()
 
 	//check if pk key and pk value found
-	_, err := getPKVal(property, row_data)
+	_, err = getPKVal(property, row_data)
 	if err != nil {
 		return "", err
 	}
 
 	//get sql command template for exec in NamedExec
-	stmt, err := getSqlCommand1(property, row_data)
-	// stmt, err := getSqlCommand(property, row_data)
+	stmt, err := getSqlCommand(property, row_data, columnsType)
 	if err != nil {
 		return "", err
 	}
 
-	//if pk value is new, if true then insert with new last_doc
+	//check if pk value is new, if true then insert with new last_doc
 	row_data, err = AddIfNew(property, row_data)
 	if err != nil {
 		return "", err
 	}
 
-	//update the row with pk value
-	row_data = convertDateInRow(property, row_data)
+	//convert data in row to match type
+	row_data = convertDataType(property, row_data, columnsType)
 	_, err = DB.NamedExec(stmt, row_data)
 	if err != nil {
 		return "", err
@@ -220,12 +225,17 @@ func updateRow(property *Property, row_data map[string]interface{}) (string, err
 }
 
 func updateRows(property *Property, rows_data []map[string]interface{}) error {
+	//get coluumns in table
+	columnsType, err := ColumnTypes(property.Table)
+	if err != nil {
+		return err
+	}
 	//connect to database
 	DB := onl_db.ConnectDB()
 	defer DB.Close()
 
 	//check if pk key and pk value found
-	_, err := getPKVal(property, rows_data[0])
+	_, err = getPKVal(property, rows_data[0])
 	if err != nil {
 		return err
 	}
@@ -233,8 +243,7 @@ func updateRows(property *Property, rows_data []map[string]interface{}) error {
 	//loop for each array (data of each row)
 	for _, v := range rows_data {
 		//get sql command template for exec in NamedExec
-		stmt, err := getSqlCommand1(property, v)
-		// stmt, err := getSqlCommand(property, v)
+		stmt, err := getSqlCommand(property, v, columnsType)
 		if err != nil {
 			return err
 		}
@@ -246,7 +255,7 @@ func updateRows(property *Property, rows_data []map[string]interface{}) error {
 		}
 
 		//update the row with pk value
-		row_data = convertDateInRow(property, row_data)
+		row_data = convertDataType(property, row_data, columnsType)
 		// fmt.Println(row_data)
 		_, err = DB.NamedExec(stmt, row_data)
 		if err != nil {
@@ -277,8 +286,8 @@ func AddIfNew(property *Property, row_data map[string]interface{}) (map[string]i
 	if err != nil {
 		return nil, err
 	}
-	if strings.Contains(strings.ToLower(pk_value), "new") {
-		res, err := onl_db.QueryLastDoc(property.CTRLNO, property.PREFIX)
+	if strings.ToLower(pk_value) == "new" {
+		res, err := onl_db.GetNewDoc(property.CTRLNO, property.PREFIX)
 		if err != nil {
 			return nil, err
 		}
@@ -293,38 +302,7 @@ func AddIfNew(property *Property, row_data map[string]interface{}) (map[string]i
 	return row_data, nil
 }
 
-func getSqlCommand(property *Property, row_data map[string]interface{}) (string, error) {
-	db_data := reflect.ValueOf(row_data)
-	cols_vals := []string{}
-	for _, key_reflect := range db_data.MapKeys() {
-		key := fmt.Sprintf("%v", key_reflect)
-		lower_key := strings.ToLower(key)
-		if strings.Contains(lower_key, "ro_") { // case of found prefix of ro (read only)
-			// fmt.Println("Found read-only field", key)
-			_ = "do nothing (this is read-only field)"
-		} else if strings.Contains(key, property.PK) { // case of found pk key field and value
-			// fmt.Println("Found primary key value :", db_data.MapIndex(key_reflect))
-			_ = "do nothing (this is pk field and value)"
-		} else if key == "pk" || key == "PK" { // case of found pk field name
-			// fmt.Println("Found primary key field : ", db_data.MapIndex(key_reflect))
-			_ = "do nothing (this is pk field)"
-		} else { // case of is normal column
-			// value := db_data.MapIndex(key_reflect)
-			row_data[key] = checkIsDateConvert(row_data[key])
-			col_val := fmt.Sprintf("%v = :%v", key, key)
-			cols_vals = append(cols_vals, col_val)
-		}
-	}
-	cols_vals_text := strings.Join(cols_vals, ", ")
-	stmt := fmt.Sprintf("UPDATE %v set %v where %v = :%v", property.Table, cols_vals_text, property.PK, property.PK)
-	return stmt, nil
-}
-
-func convertDateInRow(property *Property, row_data map[string]interface{}) map[string]interface{} {
-	columns, err := ColumnTypes(property.Table)
-	if err != nil {
-		return nil
-	}
+func convertDataType(property *Property, row_data map[string]interface{}, columnsType []interface{}) map[string]interface{} {
 	db_data := reflect.ValueOf(row_data)
 	for _, key_reflect := range db_data.MapKeys() {
 		key := fmt.Sprintf("%v", key_reflect)
@@ -333,7 +311,7 @@ func convertDateInRow(property *Property, row_data map[string]interface{}) map[s
 			_ = "do nothing (this is pk field and value)"
 		} else { // case of is normal column
 			// value := db_data.MapIndex(key_reflect)
-			for _, v := range columns {
+			for _, v := range columnsType {
 				s := reflect.ValueOf(v)
 				db_col := fmt.Sprintf("%v", s.MapIndex(reflect.ValueOf("name")))
 				db_col_type := fmt.Sprintf("%v", s.MapIndex(reflect.ValueOf("type")))
@@ -368,11 +346,7 @@ func checkIsDateConvert(value interface{}) interface{} {
 	return nil
 }
 
-func getSqlCommand1(property *Property, row_data map[string]interface{}) (string, error) {
-	columns, err := ColumnTypes(property.Table)
-	if err != nil {
-		return "", err
-	}
+func getSqlCommand(property *Property, row_data map[string]interface{}, columnsType []interface{}) (string, error) {
 	db_data := reflect.ValueOf(row_data)
 	cols_vals := []string{}
 	for _, key_reflect := range db_data.MapKeys() {
@@ -382,7 +356,7 @@ func getSqlCommand1(property *Property, row_data map[string]interface{}) (string
 			_ = "do nothing (this is pk field and value)"
 		} else { // case of is normal column
 			// value := db_data.MapIndex(key_reflect)
-			for _, v := range columns {
+			for _, v := range columnsType {
 				s := reflect.ValueOf(v)
 				db_col := fmt.Sprintf("%v", s.MapIndex(reflect.ValueOf("name")))
 				if strings.EqualFold(key, db_col) {

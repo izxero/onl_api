@@ -284,6 +284,28 @@ func QuerySqlColumnTypes(sql string, injection bool) ([]interface{}, error) {
 	return columnsData, nil
 }
 
+func GetNewDoc(CTRLNO string, PREFIX string) (string, error) {
+	DB := ConnectDB()
+	defer DB.Close()
+	loginStmt, err := DB.Prepare("begin C_Run(:1,:2,:3); end;")
+	if err != nil {
+		return "", err
+	}
+	defer loginStmt.Close()
+	// mCtrl := "test"
+	// mDocNo := "testN"
+	var retVal int
+
+	loginStmt.Exec(CTRLNO, PREFIX, sql.Out{Dest: &retVal})
+	if err != nil {
+		return "", err
+	}
+
+	runno := fmt.Sprintf("%.4d", retVal)
+	new_doc_no := fmt.Sprintf("%v_%v", PREFIX, runno)
+	return new_doc_no, nil
+}
+
 func QueryLastDoc(CTRLNO string, PREFIX string) (string, error) {
 	DB := ConnectDB()
 	defer DB.Close()
